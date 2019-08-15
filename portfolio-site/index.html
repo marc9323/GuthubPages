@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>My Portfolio</title>
+        <title>Marc D. Holman</title>
 
+        <!-- ensure proper rendering on mobile -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- https://github.com/nicinabox/superslides -->
 
         <link rel="stylesheet" type="text/css" href="css/superslides.css" />
@@ -18,11 +20,31 @@
             crossorigin="anonymous"
         />
 
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
+            integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S"
+            crossorigin="anonymous"
+        />
+
         <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
+ 
+       <!-- loader gif -->
+        <div class="loader">
+            <div class="inner"></div>
+        </div>
         <!-- superslides - set up the slide images -->
         <div id="slides">
             <div class="overlay"></div>
@@ -48,6 +70,34 @@
                 <a href="#" class="prev"></a>
             </nav>
         </div>
+
+        <!-- bootstrap navigation -->
+        <nav id="navigation" class="navbar navbar-expand-lg">
+                <a class="navbar-brand" href="#">Marc D. Holman</a>
+          
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+          
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#stats">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                  </ul>
+                </div>
+          
+              </nav>
+          
 
         <!-- About me Section -->
         <div id="about" class="section">
@@ -216,7 +266,9 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="squareItem">
                             <div class="squareInnerContainer">
-                                <div class="squareIcon"></div>
+                                <div class="squareIcon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
                                 <div class="squareContent">
                                     <h2>4</h2>
                                     <h3>Years Experience</h3>
@@ -224,9 +276,226 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="squareItem">
+                            <div class="squareInnerContainer">
+                                <div class="squareIcon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                                <div class="squareContent">
+                                    <h2>3</h2>
+                                    <h3>Years Comp. Sci.</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="squareItem">
+                            <div class="squareInnerContainer">
+                                <div class="squareIcon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                                <div class="squareContent">
+                                    <h2>2</h2>
+                                    <h3>Games Launched</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6">
+                        <div class="squareItem">
+                            <div class="squareInnerContainer">
+                                <div class="squareIcon">
+                                    <i class="fa fa-clock-o"></i>
+                                </div>
+                                <div class="squareContent">
+                                    <h2>3</h2>
+                                    <h3>Clients</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- contact section -->
+        <div id="contact" class="contactSection section">
+            <div class="col-md-12 text-center">
+                <!-- <p class="subHeading">Like what you see?</p> -->
+                <h2>SEND ME A MESSAGE</h2>
+                <a
+                    class="emailButton"
+                    href="mailTo:marcholman9323@gmail.com"
+                    class="contactButton"
+                    >marcholman9323@gmail.com</a
+                >
+            </div>
+        </div>
+
+        <!-- portfolio section -->
+        <div id="portfolio" class="section">
+
+            <div class="container">
+    
+                <div class="row">
+    
+                    <div class="heading">
+                        <h2>PORTFOLIO</h2>
+                    </div>
+    
+                    <div class="filter">
+    
+                        <ul id="filters">
+    
+                            <!-- items should have class corresponding to data-filter value minus '.'-->
+                            <li><a href="#" data-filter="*" class="current">ALL</a></li>
+                            <li><a href="#" data-filter=".apps">Apps</a></li>
+                            <li><a href="#" data-filter=".me">Me</a></li>
+                            <li><a href="#" data-filter=".websites">Websites</a></li>
+                            <li><a href="#" data-filter=".games">Games</a></li>
+    
+                        </ul>
+    
+                    </div>
+
+                    <!-- empty onClick handler fixes icons not showing bug on ipad chrome/safari-->
+                    <div class="itemsContainer">
+                        <ul class="items">
+                            <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="item">
+                                    <img src="img/portfolio/thumbnails/dog-square.jpeg" alt="">
+
+                                    <!-- open image -->
+                                    <div class="icons">
+                                        <!-- path to full image -->
+                                        <a href="img/portfolio/dog.jpeg" title="View image" class="openButton" data-fancybox data-caption="This is a dog filler">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                        <!-- open link in new window new tab -->
+                                        <!--Add link to project here-->
+                                        <a href="http://www.google.com" target="_blank" class="projectLink">
+                                            <i class="fa fa-link"></i>
+                                        </a>                                       
+                                    </div>
+                                    <div class="imageOverlay"></div>
+                                </div>
+                            </li>
+
+                            <li onClick="" class="games col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                    <div class="item">
+                                        <img src="img/portfolio/thumbnails/dog-square.jpeg" alt="">
+    
+                                        <!-- open image -->
+                                        <div class="icons">
+                                            <!-- path to full image -->
+                                            <a href="img/portfolio/dog.jpeg" title="View image" class="openButton" data-fancybox data-caption="This is a dog filler">
+                                                <i class="fa fa-search"></i>
+                                            </a>
+                                            <!-- open link in new window new tab -->
+                                            <a href="" target="_blank" class="projectLink">
+                                                <i class="fa fa-link"></i>
+                                            </a>                                       
+                                        </div>
+
+                                        <div class="imageOverlay"></div>
+                                    </div>
+                                </li>
+
+                                <li onClick="" class="games col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                        <div class="item">
+                                            <img src="img/portfolio/thumbnails/dog-square.jpeg" alt="">
+        
+                                            <!-- open image -->
+                                            <div class="icons">
+                                                <!-- path to full image -->
+                                                <a href="img/portfolio/dog.jpeg" title="View image" class="openButton" data-fancybox data-caption="This is a dog filler">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                                <!-- open link in new window new tab -->
+                                                <a href="" target="_blank" class="projectLink">
+                                                    <i class="fa fa-link"></i>
+                                                </a>                                       
+                                            </div>
+                                            <div class="imageOverlay"></div>
+                                        </div>
+                                    </li>
+
+                                    <li onClick="" class="websites col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                            <div class="item">
+                                                <img src="img/portfolio/thumbnails/dog-square.jpeg" alt="">
+            
+                                                <!-- open image -->
+                                                <div class="icons">
+                                                    <!-- path to full image -->
+                                                    <a href="img/portfolio/dog.jpeg" title="View image" class="openButton" data-fancybox data-caption="This is a dog filler">
+                                                        <i class="fa fa-search"></i>
+                                                    </a>
+                                                    <!-- open link in new window new tab -->
+                                                    <a href="" target="_blank" class="projectLink">
+                                                        <i class="fa fa-link"></i>
+                                                    </a>                                       
+                                                </div>
+                                                <div class="imageOverlay"></div>
+                                            </div>
+                                        </li>
+
+                                        <li onClick="" class="websites col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                                <div class="item">
+                                                    <img src="img/portfolio/thumbnails/dog-square.jpeg" alt="">
+                
+                                                    <!-- open image -->
+                                                    <div class="icons">
+                                                        <!-- path to full image -->
+                                                        <a href="img/portfolio/dog.jpeg" title="View image" class="openButton" data-fancybox data-caption="This is a dog filler">
+                                                            <i class="fa fa-search"></i>
+                                                        </a>
+                                                        <!-- open link in new window new tab -->
+                                                        <a href="" target="_blank" class="projectLink">
+                                                            <i class="fa fa-link"></i>
+                                                        </a>                                       
+                                                    </div>
+                                                    <div class="imageOverlay"></div>
+                                                </div>
+                                            </li>
+
+                                            <li onClick="" class="me col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                                    <div class="item">
+                                                        <img src="img/portfolio/thumbnails/dog-square.jpeg" alt="">
+                    
+                                                        <!-- open image -->
+                                                        <div class="icons">
+                                                            <!-- path to full image -->
+                                                            <a href="img/portfolio/dog.jpeg" title="View image" class="openButton" data-fancybox data-caption="This is a dog filler">
+                                                                <i class="fa fa-search"></i>
+                                                            </a>
+                                                            <!-- open link in new window new tab -->
+                                                            <a href="" target="_blank" class="projectLink">
+                                                                <i class="fa fa-link"></i>
+                                                            </a>                                       
+                                                        </div>
+                                                        <div class="imageOverlay"></div>
+                                                    </div>
+                                                </li>
+                        </ul>
+                    </div>
+    
+                </div>
+    
+            </div>
+
+
+        <!-- copyright section -->
+
+        <div class="copyrightSection">
+            <div class="col-md-12 text-center">
+                <p>&copy; Copyright Marc D. Holman 2019</p>
+            </div>
+        </div>
+
 
         <script src="js/jquery.superslides.min.js"></script>
         <script src="js/owl.carousel.min.js"></script>
@@ -242,6 +511,9 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
+        <!-- sorting and filtering of portfolio items -->
+        <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
